@@ -53,6 +53,8 @@ public class AStarGraph {
             Closedlist.add(Current);
             CurrentNeighbors = Current.getNeighbours();
 //Max antal V igen
+
+            //looper 3 gange
             for ( int i=0; i<CurrentNeighbors.size(); i++ ) {
                 Neighbor = CurrentNeighbors.get(i);
                 Double checkG = Current.getg() + Current.getNeighbourDistance().get(i);

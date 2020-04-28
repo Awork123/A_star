@@ -12,8 +12,8 @@ public class Controller {
     public Controller(AStarGraph GraphModel, AStarFormView aStarFormView) {
         this.model = GraphModel;
         this.view = aStarFormView;
-        view.algorithmButton.setOnAction(e -> model.A_Star(view.startVertexComB.getValue(), view.endVertexComB.getValue(),true));
-        view.algorithmeButtonM.setOnAction(e -> model.A_Star(view.startVertexComB.getValue(), view.endVertexComB.getValue(),false));
+        view.euclideanCalculatorButton.setOnAction(e -> model.A_Star(view.startVertexComB.getValue(), view.endVertexComB.getValue(),true));
+        view.manhattanCalculatorButton.setOnAction(e -> model.A_Star(view.startVertexComB.getValue(), view.endVertexComB.getValue(),false));
         EventHandler<ActionEvent> PrintRequestHndl = e -> runAstar(view.endVertexComB.getValue(), view.shortestpathTA);
         view.PrintButton.setOnAction(PrintRequestHndl);
     }

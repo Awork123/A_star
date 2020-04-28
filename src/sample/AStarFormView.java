@@ -13,8 +13,8 @@ public class AStarFormView {
 
     Label StartVertexLbl =new Label("Select Start:");
     ComboBox<Vertex> startVertexComB= new ComboBox<>();
-    Button algorithmButton = new Button("Run A* with Euc");
-    Button algorithmeButtonM = new Button("Run A* with Manhattan");
+    Button euclideanCalculatorButton = new Button("Run A* with Euclidean");
+    Button manhattanCalculatorButton = new Button("Run A* with Manhattan");
     Label EndVertexLbl =new Label("Select End:");
     ComboBox<Vertex> endVertexComB= new ComboBox<>();
     Button PrintButton = new Button("Print shortest path");
@@ -63,8 +63,8 @@ public class AStarFormView {
         //Add controls to pane
         Startview.add(StartVertexLbl, 1,1);
         Startview.add(startVertexComB,15,1);
-        Startview.add(algorithmButton,15,3);
-        Startview.add(algorithmeButtonM,20, 3);
+        Startview.add(euclideanCalculatorButton,15,3);
+        Startview.add(manhattanCalculatorButton,20, 3);
         Startview.add(EndVertexLbl,1,2);
         Startview.add(endVertexComB,15,2);
         Startview.add(PrintButton,15,4);
