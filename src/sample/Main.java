@@ -11,7 +11,7 @@ public class Main extends Application {
         AStarGraph GraphModel =CreateGraph();
         AStarFormView aStarFormView=new AStarFormView(GraphModel);
         Controller controller= new Controller(GraphModel,aStarFormView);
-        primaryStage.setTitle("Dijkstra Form");
+        primaryStage.setTitle("A* Algorithm");
         primaryStage.setScene(new Scene(aStarFormView.asParent(), 400, 300));
         primaryStage.show();
     }
