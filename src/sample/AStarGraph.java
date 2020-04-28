@@ -6,7 +6,7 @@ import static java.lang.StrictMath.abs;
 import static java.lang.StrictMath.sqrt;
 
 public class AStarGraph {
-        private ArrayList<Vertex> vertices;
+    private ArrayList<Vertex> vertices;
     public AStarGraph() {
         vertices=new ArrayList<>();
     }
@@ -20,7 +20,7 @@ public class AStarGraph {
         v1.addOutEdge(v2,dist);
         v2.addOutEdge(v1,dist);
     }
-    public boolean A_Star(Vertex start, Vertex destination)
+    public boolean A_Star(Vertex start, Vertex destination, boolean Euclidean)
     {   if (start==null || destination==null)
         return false;
         PriorityQueue<Vertex> Openlist = new PriorityQueue<>();
@@ -30,19 +30,29 @@ public class AStarGraph {
         ArrayList<Vertex> CurrentNeighbors;
         Vertex Neighbor;
         for (Vertex vertex : vertices) {
-            vertex.seth(Manhattan(vertex, destination));
+            vertex.setPrev(null);
+            vertex.setg(Double.POSITIVE_INFINITY);
+            if (Euclidean) {
+                vertex.seth(Euclidean(vertex, destination));
+            }
+            else {
+                vertex.seth(Manhattan(vertex, destination));
+            }
         }
         start.setg(0.0);
         start.calculatef();
         System.out.println("Start Algorithm");
+
+        //V antal vertices - Max antal V
         while (!Openlist.isEmpty()) {
+            //konstant eller log(v)tid (tag konstant)
             Current = Openlist.remove();
             if(Current == destination) {
                 return true;
             }
             Closedlist.add(Current);
             CurrentNeighbors = Current.getNeighbours();
-
+//Max antal V igen
             for ( int i=0; i<CurrentNeighbors.size(); i++ ) {
                 Neighbor = CurrentNeighbors.get(i);
                 Double checkG = Current.getg() + Current.getNeighbourDistance().get(i);
@@ -51,11 +61,12 @@ public class AStarGraph {
                     Neighbor.setPrev(Current);
                     Neighbor.setg(checkG);
                     Neighbor.calculatef();
-
-                    if (!Closedlist.contains(Neighbor) && !Openlist.contains(Neighbor) ) {
-                        Openlist.offer(Neighbor);
+//max v tid
+                    if (!Closedlist.contains(Neighbor) && !Openlist.contains(Neighbor) ) { // //v*v*v
+                            Openlist.offer(Neighbor);
 
                     } else if ( Openlist.contains(Neighbor) ) {
+                        //max v tid
                         Openlist.remove(Neighbor);
                         Openlist.offer(Neighbor);
                     }
