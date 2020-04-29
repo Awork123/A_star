@@ -9,8 +9,8 @@ import javafx.util.Callback;
 
 public class AStarFormView {
 
+    /* We instantiate all of the necessary components for running our javaFX*/
     private GridPane Startview;
-
     Label StartVertexLbl =new Label("Select Start:");
     ComboBox<Vertex> startVertexComB= new ComboBox<>();
     Button euclideanCalculatorButton = new Button("Run A* with Euclidean");
@@ -21,8 +21,8 @@ public class AStarFormView {
     TextArea shortestpathTA=new TextArea();
 
 
+    /* We format our javaFX, and makes the ComboBoxes show which Vertex they are currently at using the Vertex ID*/
     public AStarFormView(AStarGraph GraphModel){
-
         Startview = new GridPane();
         Startview.setMinSize(300,200);
         Startview.setPadding(new Insets(10,10,10,10));
@@ -49,7 +49,7 @@ public class AStarFormView {
             }
         };
 
-
+        /* We set all of the start and end Vertex, and add our controls to the view. */
         startVertexComB.setItems(VertexList);
         startVertexComB.setButtonCell(VertexcellFactory.call(null));
         startVertexComB.setCellFactory(VertexcellFactory);
@@ -59,8 +59,6 @@ public class AStarFormView {
         endVertexComB.setCellFactory(VertexcellFactory);
         endVertexComB.setValue(GraphModel.getVertices().get(0));
         shortestpathTA.setPrefColumnCount(1);
-
-        //Add controls to pane
         Startview.add(StartVertexLbl, 1,1);
         Startview.add(startVertexComB,15,1);
         Startview.add(euclideanCalculatorButton,15,3);

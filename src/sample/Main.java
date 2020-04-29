@@ -6,8 +6,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    //We setup the javaFX window.
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
         AStarGraph GraphModel =CreateGraph();
         AStarFormView aStarFormView=new AStarFormView(GraphModel);
         Controller controller= new Controller(GraphModel,aStarFormView);
@@ -16,6 +17,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    // We create our maze with vertex, add them and add which connections they have.
     private AStarGraph CreateGraph() {
         AStarGraph MyMaze = new AStarGraph();
         Vertex A = new Vertex("A", 0, 4);

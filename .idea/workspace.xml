@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/sample/AStarFormView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AStarFormView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/AStarGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AStarGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588076685192</updated>
       <workItem from="1588076686599" duration="5788000" />
+      <workItem from="1588157420612" duration="194000" />
     </task>
     <servers />
   </component>
